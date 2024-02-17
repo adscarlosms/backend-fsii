@@ -45,35 +45,7 @@ export default class QuartoCtrl {
         }
     }
 
-    /*
-    atualizar(requisicao, resposta) {
-        resposta.type('application/json');
-        if (requisicao.method === "PUT" && requisicao.is('application/json')) {
-            const dados = requisicao.body;
-            const cliente_id = dados.cliente_id;
-            const cpf = dados.cpf;
-            const nome =  dados.nome;
-            const telefone = dados.telefone;
-            const endereco = dados.endereco;
-            const cidade = dados.cidade;
-            const email = dados.email;
-            const datanasc = dados.datanasc;
-            const nacionalidade = dados.nacionalidade;
-            const profissao = dados.profissao;
-            const sexo = dados.sexo;
-            const senha = dados.senha;
 
-
-
-
-            if (cliente_id, cpf,nome, telefone,endereco, email,cidade, datanasc, nacionalidade, profissao, sexo, senha) {
-                const cliente = new Cliente(0, cpf,nome, telefone,endereco, email,cidade, datanasc, nacionalidade, profissao, sexo, senha);
-                cliente.atualizar().then(() => {
-                    resposta.status(200).json({
-                        status: true,
-                        mensagem: 'Cliente atualizado com sucesso!'
-                    });
-     */
 
     atualizar(requisicao, resposta) {
         resposta.type('application/json');
