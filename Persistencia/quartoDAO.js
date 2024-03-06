@@ -29,6 +29,7 @@ export default class QuartoDAO {
             global.poolConexoes.releaseConnection(conexao);
         }
     }
+    
 
     async excluir(quarto) {
         if (quarto instanceof Quarto) {

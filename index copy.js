@@ -14,8 +14,6 @@ const porta='3000';
 
 const app = express();
 
-dotenv.config(); // Carregar variáveis de ambiente do arquivo .env
-
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -25,7 +23,9 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
     maxAge: 1000 * 60 * 6
-}));
+}))
+
+dotenv.config();
 
 app.use('/login',rotaLogin);
 app.use('/categoria',verificarAcesso,rotaCategoria);
@@ -35,4 +35,6 @@ app.use('/quarto',verificarAcesso,rotaQuarto);
 
 app.listen(porta, host, ()=>{
     console.log(`Servidor escutando na porta ${host}:${porta}.`);
-});
+})
+
+
