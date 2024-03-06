@@ -45,18 +45,20 @@ export default class QuartoCtrl {
         }
     }
 
+
+
     atualizar(requisicao, resposta) {
         resposta.type('application/json');
-        if ((requisicao.method === 'PUT' || requisicao.method === 'PATCH') && requisicao.is('application/json')) {
+        if (requisicao.method === "PUT" && requisicao.is('application/json')){            
             const dados = requisicao.body;
+            const idquarto = dados.idquarto;
             const numero = dados.numero;
             const andar = dados.andar;
             const status = dados.status;
             const tipoquarto = dados.tipoquarto;
 
-            if (numero && andar && status && tipoquarto) {
-                const quarto = new Quarto(0, numero, andar, status, 
-                    tipoquarto
+            if (idquarto && numero && andar && status && tipoquarto) {
+                const quarto = new Quarto(idquarto, numero, andar, status, tipoquarto
                 );
                 //resolver a promise
                 quarto.atualizar().then(() => {
