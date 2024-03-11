@@ -1,6 +1,7 @@
 import { Router } from "express";
 import ProdutoCtrl from "../Controle/produtoCtrl.js";
 
+
 const prodCtrl = new ProdutoCtrl();
 const rotaProduto = new Router();
 

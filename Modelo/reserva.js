@@ -66,7 +66,7 @@ export default class reserva {
             'cliente': this.#cliente,
             'data_inicio': this.#data_inicio,
             'data_fim': this.#data_fim,
-            'quartos': this.#quartos
+            'quartosReservados': this.#quartos
         };
     }
 

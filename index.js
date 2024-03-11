@@ -32,13 +32,13 @@ app.use(session({
 }));
 
 app.use('/login',rotaLogin);
-app.use('/cliente',rotaCliente);
+app.use('/cliente',verificarAcesso,rotaCliente);
 app.use('/categoria',verificarAcesso,rotaCategoria);
 app.use('/produto',verificarAcesso,rotaProduto);
 app.use('/tipoquarto',verificarAcesso,rotaTipoQuarto);
 app.use('/quarto',verificarAcesso,rotaQuarto);
 app.use('/pedido',rotaPedido);
-app.use('/reserva',rotaReserva);
+app.use('/reserva',verificarAcesso,rotaReserva);
 
 app.listen(porta, host, ()=>{
     console.log(`Servidor escutando na porta ${host}:${porta}.`);

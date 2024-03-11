@@ -9,21 +9,23 @@ export default class ReservaCtrl {
         resposta.type('application/json');
         if (requisicao.method === 'POST' && requisicao.is('application/json')) {
             const dados = requisicao.body;
-            
+            const codigo = dados.codigo;
             const cliente = dados.cliente;
             const data_inicio = dados.data_inicio;
             const data_fim = dados.data_fim;
-            const itensreserva = dados.itens;
-
+            const itensreserva = dados.quartosReservados;
+            //const itensreserva = dados.quartos;
             const objCliente = new Cliente(cliente.codigo);
             
             let itens = [];
 
             for (const item of itensreserva) {
               
-                const quarto = new Quarto(item.idquarto);
+                const quarto = new Quarto(item.quarto.quarto_codigo);
 
-                const objItem = new Reserva_Cliente(quarto, item.cliente_codigo, item.quarto_codigo);
+                //const objItem = new Reserva_Cliente(quarto, item.cliente_codigo, item.quarto_codigo);
+                //const objItem = new Reserva_Cliente(reserva_codigo,quarto);
+                const objItem = new Reserva_Cliente(codigo,quarto)
                 itens.push(objItem);
             }
           

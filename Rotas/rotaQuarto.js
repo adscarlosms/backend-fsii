@@ -1,6 +1,7 @@
 import { Router } from "express";
 import QuartoCtrl from "../Controle/quartoCtrl.js";
 
+
 const quartoCtrl = new QuartoCtrl();
 const rotaquarto = new Router();
 

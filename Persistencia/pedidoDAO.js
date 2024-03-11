@@ -17,10 +17,6 @@ export default class PedidoDAO {
                 const retorno = await conexao.execute(sql, parametros);
                 pedido.codigo = retorno[0].insertId;
                 
-	
-	
-	
-
                 const sql2 = "INSERT INTO pedido_produto(pedido_codigo, produto_codigo, quantidade, preco_unitario) VALUES(?,?,?,?)";
                 for (const item of pedido.itens) {
                     const parametros2 = [pedido.codigo, item.produto.codigo, item.quantidade, item.precoUnitario];

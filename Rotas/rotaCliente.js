@@ -1,6 +1,7 @@
 import { Router } from "express";
 import ClienteCtrl from "../Controle/clienteCtrl.js";
 
+
 //rotas é o mapeamento das requisições da web para um determinado
 //endpoint da aplicação
 
